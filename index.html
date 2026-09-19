@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rushikesh Kuchekar — Java Developer and Backend Software Engineer with 4+ years of experience, 15+ production APIs, Java, Spring Boot, microservices, Kafka, Redis, MongoDB, security, CI/CD and BFSI systems.">
+    <meta name="keywords" content="Rushikesh Kuchekar, Java Developer, Backend Software Engineer, Java, Spring Boot, Spring Security, REST APIs, Microservices, MongoDB, SQL, MySQL, Node.js, Docker, Kubernetes, Jenkins, Tekton, GitHub, HashiCorp Vault, AES Encryption, BFSI, Union Bank of India, YES Bank, DBS Bank, Dhofar Bank">
+    <meta name="author" content="Rushikesh Vasant Kuchekar">
+    <title>Rushikesh Kuchekar | Java Developer | Backend Software Engineer</title>
+    <style>
+        :root{
+          --navy:#071a2b; --navy2:#0b2439; --blue:#1683f6; --blue2:#53b2ff;
+          --ink:#102033; --muted:#5d6b7a; --bg:#f5f8fc; --card:#ffffff;
+          --line:#dfe8f1; --shadow:0 12px 35px rgba(9,31,54,.08); --radius:18px;
+        }
+        *{box-sizing:border-box} html{scroll-behavior:smooth}
+        body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.58}
+        a{color:inherit;text-decoration:none}
+        .layout{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+        .sidebar{position:fixed;inset:0 auto 0 0;width:270px;background:linear-gradient(180deg,#061726,#09243a);color:#fff;padding:28px 18px;display:flex;flex-direction:column;z-index:20}
+        .brand{text-align:center;padding:0 8px 22px;border-bottom:1px solid rgba(255,255,255,.12)}
+        .logo{font-size:34px;font-weight:900;color:#32a4ff;letter-spacing:-2px}
+        .brand h1{font-size:16px;margin:3px 0 2px}.brand p{font-size:11px;color:#a9bdcf;margin:0}
+        .tagline{font-size:11px;color:#d8e7f4;margin-top:12px;letter-spacing:.5px}
+        nav{padding-top:20px}
+        nav a{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;color:#c9d7e4;font-size:13px;margin:4px 0;transition:.2s}
+        nav a:hover,nav a.active{background:#0d6fd2;color:#fff;box-shadow:0 7px 20px rgba(22,131,246,.25)}
+        nav .icon{width:20px;text-align:center}
+        .social{margin-top:auto;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+        .social-title{font-size:10px;color:#91abc0;letter-spacing:1px;text-transform:uppercase;margin:0 8px 9px}
+        .social a{display:block;padding:7px 8px;color:#d7e4ef;font-size:12px}
+        .copyright{font-size:10px;color:#718ba0;margin:18px 8px 0}
+        main{grid-column:2;min-width:0}
+        .hero{background:radial-gradient(circle at 85% 25%,rgba(37,139,235,.24),transparent 28%),linear-gradient(135deg,#081b2d,#0d2c46);color:#fff;padding:64px clamp(28px,6vw,80px) 54px;position:relative;overflow:hidden}
+        .hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 250px;gap:42px;align-items:center}
+        .eyebrow{color:#61baff;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;font-size:12px}
+        .hero h2{font-size:clamp(38px,5vw,62px);line-height:1.03;letter-spacing:-2.6px;margin:9px 0;color:#fff}
+        .hero h2 span{color:#31a1ff}.hero h3{font-size:clamp(19px,2.3vw,28px);margin:0 0 14px;color:#45aaff}
+        .hero .lead{font-size:16px;color:#d9e7f2;max-width:690px;margin:0 0 22px}
+        .meta{display:flex;flex-wrap:wrap;gap:10px 18px;color:#d8e7f4;font-size:12px;margin-bottom:24px}
+        .actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:10px;font-weight:800;font-size:12px;border:1px solid rgba(255,255,255,.4);transition:.2s}
+        .btn.primary{background:#1683f6;border-color:#1683f6}.btn:hover{transform:translateY(-2px)}
+        .profile{text-align:center}.avatar{width:190px;height:190px;border-radius:50%;margin:auto;display:block;object-fit:cover;object-position:center top;border:3px solid #8ed0ff;box-shadow:0 0 0 8px rgba(72,173,255,.08)}
+        .profile p{font-size:12px;color:#b9d1e3;margin:12px 0}.hero-stats{display:flex;gap:24px;justify-content:center;margin-top:15px}.hero-stats b{display:block;color:#49acff;font-size:18px}.hero-stats span{font-size:9px;color:#b9cddd}
+        .content{max-width:1120px;margin:auto;padding:42px clamp(20px,5vw,64px)}
+        section{scroll-margin-top:25px;margin-bottom:42px}
+        .section-head{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:20px;padding-bottom:9px}
+        .section-kicker{font-size:10px;font-weight:900;color:#1683f6;letter-spacing:1.5px;text-transform:uppercase}.section-title{font-size:24px;line-height:1.1;margin:3px 0 0}.section-no{font-size:11px;color:#91a1b1}
+        .grid2{display:grid;grid-template-columns:1.35fr .95fr;gap:20px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+        .summary{font-size:14px;color:#344454;margin:0}
+        .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.metric{background:#f4f8fd;border:1px solid #e1ebf5;border-radius:12px;padding:14px;text-align:center}.metric b{font-size:21px;color:#126fcb;display:block}.metric span{font-size:10px;color:#627487}
+        .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-size:11px;font-weight:700;padding:7px 10px;border-radius:9px;background:#f0f6fc;border:1px solid #d9e7f3;color:#25465e}
+        .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.skill-group{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.skill-group strong{font-size:11px;display:block;margin-bottom:7px;color:#0e4f86}.skill-group p{margin:0;font-size:11px;color:#526576}
+        .timeline{position:relative;padding-left:24px}.timeline:before{content:"";position:absolute;left:6px;top:5px;bottom:5px;width:2px;background:#cfe3f5}.role{position:relative;margin-bottom:22px}.role:before{content:"";position:absolute;left:-22px;top:6px;width:10px;height:10px;background:#1683f6;border-radius:50%;box-shadow:0 0 0 4px #e4f1fd}
+        .role h3{margin:0;font-size:16px}.role .sub{font-size:11px;color:#607387}.role ul{margin:10px 0 0;padding-left:18px;font-size:12px;color:#344454}.role li{margin:5px 0}
+        .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.project{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;transition:.2s}.project:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.project h3{font-size:14px;margin:0 0 5px}.project p{font-size:11px;color:#586b7c;margin:0 0 12px}.project .chips{gap:5px}.project .chip{font-size:9px;padding:5px 7px}
+        .lead-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.lead-card{border:1px solid #cfe1f1;background:linear-gradient(135deg,#fff,#f3f9ff);border-radius:16px;padding:20px}.lead-card h3{margin:0;font-size:17px}.badge{display:inline-block;font-size:9px;font-weight:900;padding:5px 8px;border-radius:99px;background:#e5f4ff;color:#0870c9;margin-bottom:8px}.lead-card ul{font-size:11px;color:#405567;padding-left:17px}
+        .edu-cert{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.contact{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.contact-list{display:flex;flex-wrap:wrap;gap:12px}.contact-item{background:#f4f8fc;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:11px}
+        footer{background:#061726;color:#b5c8d8;padding:26px clamp(20px,5vw,64px);font-size:11px}.footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+        .mobile-top{display:none}
+        @media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{display:none}main{grid-column:1}.mobile-top{display:flex;position:sticky;top:0;z-index:30;background:#071a2b;color:#fff;padding:12px 16px;align-items:center;justify-content:space-between}.mobile-top a{font-size:12px}.mobile-menu{display:flex;gap:6px;overflow:auto}.mobile-menu a{white-space:nowrap;padding:7px 9px;border-radius:8px;background:#0b2a42}.hero-inner{grid-template-columns:1fr}.profile{display:none}}
+        @media(max-width:760px){.grid2,.lead-grid,.edu-cert,.contact{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.hero{padding-top:35px}.content{padding-top:30px}.hero h2{letter-spacing:-1.6px}}
+    </style>
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">RK</div>
+            <h1>Rushikesh Kuchekar</h1>
+            <p>Java Developer | Backend Software Engineer</p>
+            <div class="tagline">Build • Lead • Deliver</div>
+        </div>
+        <nav aria-label="Portfolio sections">
+            <a href="#home" class="active"><span class="icon">⌂</span>Home</a>
+            <a href="#about"><span class="icon">◉</span>About</a>
+            <a href="#skills"><span class="icon">⚙</span>Skills</a>
+            <a href="#experience"><span class="icon">▣</span>Experience</a>
+            <a href="#projects"><span class="icon">◆</span>Projects</a>
+            <a href="#leadership"><span class="icon">♟</span>Leadership</a>
+            <a href="#education"><span class="icon">▤</span>Education</a>
+            <a href="#certifications"><span class="icon">★</span>Certifications</a>
+            <a href="#contact"><span class="icon">✉</span>Contact</a>
+        </nav>
+        <div class="social">
+            <p class="social-title">Let's connect</p>
+            <a href="https://www.linkedin.com/in/rushikeshkuchekar91/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/rushikesh-kuchekar" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="mailto:rushikeshkuchekar91@gmail.com">Email</a>
+            <a href="tel:+917218484601">Phone</a>
+            <p class="copyright">© 2026 Rushikesh Kuchekar</p>
+        </div>
+    </aside>
+
+    <div class="mobile-top">
+        <strong>RK · Rushikesh</strong>
+        <div class="mobile-menu">
+            <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <main>
+        <header id="home" class="hero">
+            <div class="hero-inner">
+                <div>
+                    <div class="eyebrow">Hello, I'm</div>
+                    <h2>Rushikesh <span>Kuchekar</span></h2>
+                    <h3>Java Developer | Backend Software Engineer</h3>
+                    <p class="lead">Results-driven backend engineer with 4+ years of experience building scalable, secure and high-availability systems for the BFSI sector using Java, Spring Boot, REST APIs, MongoDB and microservices.</p>
+                    <div class="meta">
+                        <span>📍 Pune, Maharashtra, India</span><span>✉ rushikeshkuchekar91@gmail.com</span><span>☎ +91 7218484601</span>
+                    </div>
+                    <div class="chips" style="margin:0 0 18px;gap:6px">
+                        <span class="chip" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e7f4ff">Java</span>
+                        <span class="chip" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e7f4ff">Spring Boot</span>
+                        <span class="chip" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e7f4ff">Kafka</span>
+                        <span class="chip" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e7f4ff">Redis</span>
+                        <span class="chip" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e7f4ff">Microservices</span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn primary" href="assets/Rushikesh_Kuchekar_Java_Developer.pdf" download>↓ Download Resume</a>
+                        <a class="btn" href="#contact">✈ Contact Me</a>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img class="avatar" src="assets/profile.jpg" alt="Rushikesh Kuchekar, Java Developer and Backend Software Engineer">
+                    <p>“Turning complex backend challenges into reliable production solutions.”</p>
+                    <div class="hero-stats">
+                        <div><b>4+</b><span>Years</span></div><div><b>15+</b><span>APIs</span></div><div><b>3+</b><span>BFSI Clients</span></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section id="about">
+                <div class="section-head"><div><div class="section-kicker">01 · About</div><h2 class="section-title">Professional Summary</h2></div><span class="section-no">01</span></div>
+                <div class="grid2">
+                    <div class="card">
+                        <div style="display:flex;gap:18px;align-items:center">
+                            <img src="assets/profile.jpg" alt="Professional headshot of Rushikesh Kuchekar" style="width:92px;height:112px;object-fit:cover;object-position:center top;border-radius:14px;border:1px solid #dbe7f2;box-shadow:0 8px 24px rgba(9,31,54,.10)">
+                            <div>
+                                <div class="section-kicker">Profile</div>
+                                <h3 style="margin:3px 0 4px;font-size:16px">Backend Engineering • BFSI • Technical Ownership</h3>
+                                <p style="margin:0;color:#68798a;font-size:11px">Java, Spring Boot, Microservices, Kafka, Redis, REST APIs</p>
+                            </div>
+                        </div>
+                        <p class="summary">Detail-oriented Java Developer and Backend Software Engineer with 4+ years of experience designing and deploying scalable, high-availability backend systems for the BFSI sector. Experienced in Java 8+, Spring Boot, RESTful APIs, MongoDB, SQL/NoSQL databases, Docker, Kubernetes, Kafka, Redis and CI/CD. Proven ability to design backend integrations, optimize data access, resolve production issues, strengthen application security and coordinate delivery across product, QA and engineering teams.</p>
+                        <div class="metrics">
+                            <div class="metric"><b>4+</b><span>Years Experience</span></div><div class="metric"><b>15+</b><span>APIs Delivered</span></div><div class="metric"><b>15–20%</b><span>Query/Performance Gain</span></div><div class="metric"><b>50%</b><span>Renewal Processing Improvement</span></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="section-kicker">Core strengths</div>
+                        <div class="chips" style="margin-top:10px">
+                            <span class="chip">Backend Development</span><span class="chip">REST API Development</span><span class="chip">Microservices</span><span class="chip">BFSI Systems</span><span class="chip">Production Support</span><span class="chip">Root Cause Analysis</span><span class="chip">Performance Optimization</span><span class="chip">Application Security</span><span class="chip">CI/CD</span><span class="chip">Agile / Scrum</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <div class="section-head"><div><div class="section-kicker">02 · Skills</div><h2 class="section-title">Technical Skills</h2></div><span class="section-no">02</span></div>
+                <div class="card">
+                    <div class="skills-grid">
+                        <div class="skill-group"><strong>Languages</strong><p>Java 8+, Node.js, Python</p></div>
+                        <div class="skill-group"><strong>Frameworks & APIs</strong><p>Spring Boot, Spring Framework, Spring Security, RESTful APIs</p></div>
+                        <div class="skill-group"><strong>Architecture & Messaging</strong><p>Microservices Architecture, Event-Driven Design, Apache Kafka, Producers, Consumers, Topics, Batch Processing</p></div>
+                        <div class="skill-group"><strong>Databases & Caching</strong><p>MongoDB, SQL, MySQL, Redis; query optimization and high-speed data access</p></div>
+                        <div class="skill-group"><strong>DevOps & CI/CD</strong><p>Docker, Kubernetes, Jenkins, Tekton, Git, GitHub</p></div>
+                        <div class="skill-group"><strong>Security</strong><p>AES Encryption, HashiCorp Vault, Secure HTTP Headers, OAuth2</p></div>
+                        <div class="skill-group"><strong>Tools</strong><p>Jira, Metabase, Postman, Zendesk</p></div>
+                        <div class="skill-group"><strong>Engineering Practices</strong><p>OOP, Multithreading, Exception Handling, JUnit, Cron Jobs, Agile Scrum, Production Support, RCA</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <div class="section-head"><div><div class="section-kicker">03 · Experience</div><h2 class="section-title">Professional Experience</h2></div><span class="section-no">03</span></div>
+                <div class="card timeline">
+                    <article class="role">
+                        <h3>Turtlemint — Software Engineer</h3><div class="sub">Pune, Maharashtra · October 2022 – Present</div>
+                        <ul>
+                            <li>Architected and delivered production-grade RESTful APIs using Java and Spring Boot for high-volume BFSI policy sales and renewal workflows across clients including YES Bank, DBS Bank and Bank Dhofar.</li>
+                            <li>Optimized MongoDB queries and backend data access, contributing to 15–20% performance improvement and stable database migration.</li>
+                            <li>Engineered a REST API-driven policy renewal module using Spring Boot and microservices architecture, reducing end-to-end renewal processing time by 50%.</li>
+                            <li>Strengthened application security through AES encryption, secure HTTP headers and HashiCorp Vault-based secret management.</li>
+                            <li>Optimized backend microservices by removing redundant caching layers and improving average API response time by approximately 15%.</li>
+                            <li>Developed scheduled Java jobs to synchronize policy data from insurer systems and improve downstream data consistency.</li>
+                            <li>Built Metabase dashboards for KPI tracking and reduced manual reporting effort by 3–4 hours per week.</li>
+                            <li>Collaborated in Agile/Scrum ceremonies including sprint planning, daily stand-ups, code reviews and retrospectives.</li>
+                        </ul>
+                    </article>
+                    <article class="role">
+                        <h3>Early Turtlemint Experience — Technical Support / Backend Engineering</h3><div class="sub">October 2022 – May 2023</div>
+                        <ul>
+                            <li>Provided technical support, troubleshooting and production issue resolution.</li>
+                            <li>Performed Root Cause Analysis (RCA) to identify underlying issues and prevent repeat incidents.</li>
+                            <li>Developed and maintained Node.js scripts for process automation and application functionality.</li>
+                            <li>Resolved support tickets and critical bugs within defined SLAs.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="section-head"><div><div class="section-kicker">04 · Projects</div><h2 class="section-title">Selected Client & Engineering Work</h2></div><span class="section-no">04</span></div>
+                <div class="project-grid">
+                    <article class="project"><h3>UBI — Backend Engineering & Integration</h3><p>Leading backend delivery for Usage Based Insurance, including reference-data mapping, asynchronous lead processing, customer consent and OTP-based two-factor authentication.</p><div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">REST APIs</span><span class="chip">2FA</span></div></article>
+                    <article class="project"><h3>Union Bank of India — Policy Renewal</h3><p>Developed and integrated a policy renewal module for the renewal vertical using Java and RESTful APIs; deployed successfully to production.</p><div class="chips"><span class="chip">Java</span><span class="chip">REST APIs</span><span class="chip">MongoDB</span><span class="chip">Jenkins</span><span class="chip">Tekton</span></div></article>
+                    <article class="project"><h3>YES Bank — Backend & Security</h3><p>Optimized MongoDB and backend queries, strengthened authentication/session controls, replaced weak Base64 encoding with AES encryption, and integrated HashiCorp Vault.</p><div class="chips"><span class="chip">Java</span><span class="chip">MongoDB</span><span class="chip">AES</span><span class="chip">Vault</span><span class="chip">Kubernetes</span></div></article>
+                    <article class="project"><h3>DBS Bank — MongoDB Upgrade</h3><p>Led the MongoDB version upgrade effort, updated Java backend components and drivers, consolidated data access and removed redundant cache resources.</p><div class="chips"><span class="chip">Java</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Jenkins</span></div></article>
+                    <article class="project"><h3>Bank Dhofar — Sales & Renewal Analytics</h3><p>Engineered a module for tracking policy sales and renewals using Java and Metabase, improving real-time KPI visibility and reporting workflows.</p><div class="chips"><span class="chip">Java</span><span class="chip">Metabase</span><span class="chip">REST APIs</span><span class="chip">AngularJS</span></div></article>
+                    <article class="project"><h3>Policy Renewal Microservice</h3><p>Designed a REST API-driven renewal workflow with Spring Boot and microservices architecture, reducing end-to-end renewal processing time by 50%.</p><div class="chips"><span class="chip">Spring Boot</span><span class="chip">Microservices</span><span class="chip">REST</span><span class="chip">MongoDB</span></div></article>
+                    <article class="project"><h3>Secure Backend Architecture</h3><p>Implemented AES encryption, secure HTTP headers and HashiCorp Vault secret management for stronger application security and reduced credential exposure risk.</p><div class="chips"><span class="chip">AES</span><span class="chip">Vault</span><span class="chip">Spring Security</span><span class="chip">OAuth2</span></div></article>
+                </div>
+            </section>
+
+            <section id="leadership">
+                <div class="section-head"><div><div class="section-kicker">05 · Leadership</div><h2 class="section-title">UBI Project Leadership & Technical Ownership</h2></div><span class="section-no">05</span></div>
+                <div class="lead-grid">
+                    <article class="lead-card">
+                        <span class="badge">CURRENT · UBI</span>
+                        <h3>Usage Based Insurance — Project Leadership</h3>
+                        <p class="sub">Turtlemint · Current Project</p>
+                        <ul>
+                            <li>Leading backend engineering and technical delivery for the UBI project, coordinating work from product requirements through sprint execution.</li>
+                            <li>Plan sprints, break product requirements into actionable engineering tasks, assign ownership and prioritize work with product stakeholders.</li>
+                            <li>Design backend data-processing flows using Java, REST APIs, Redis and Apache Kafka for scalable and responsive lead processing.</li>
+                            <li>Implement unique reference ID mapping by plan and insurer using a static database as the source of reference data, with Redis caching for faster repeat lookups.</li>
+                            <li>Use Kafka for asynchronous, batch-oriented lead processing; lead data is published for downstream processing and handled in batches of approximately 45 records.</li>
+                            <li>Integrate customer-consent APIs so insurance journeys proceed only after the required customer consent is captured.</li>
+                            <li>Implement OTP-based two-factor authentication by integrating APIs required for secure login to bank and insurer portals.</li>
+                        </ul>
+                        <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">REST APIs</span><span class="chip">Batch Processing</span><span class="chip">2FA</span><span class="chip">Sprint Planning</span></div>
+                    </article>
+                    <article class="lead-card">
+                        <span class="badge">PREVIOUS · YBL</span>
+                        <h3>YBL Project — YES Bank</h3>
+                        <p class="sub">Turtlemint · Previous Project</p>
+                        <ul>
+                            <li>Led backend engineering activities for the YES Bank (YBL) project and owned technical delivery responsibilities.</li>
+                            <li>Worked across backend development, production support, performance optimization and application security for banking workflows.</li>
+                            <li>Contributed to MongoDB upgrade and backend query optimization to improve scalability and performance.</li>
+                            <li>Strengthened security through secure HTTP headers, concurrent-login controls, AES encryption and HashiCorp Vault for application secrets and API keys.</li>
+                            <li>Collaborated with cross-functional teams to deliver production fixes, enhancements and reliable backend services.</li>
+                        </ul>
+                        <div class="chips"><span class="chip">YES Bank</span><span class="chip">Java</span><span class="chip">MongoDB</span><span class="chip">AES</span><span class="chip">Vault</span><span class="chip">Kubernetes</span><span class="chip">Backend Leadership</span></div>
+                    </article>
+                </div>
+                <div class="card" style="margin-top:16px">
+                    <div class="section-kicker">Technical delivery focus</div>
+                    <div class="chips" style="margin-top:10px">
+                        <span class="chip">Backend Architecture</span><span class="chip">API Integration</span><span class="chip">Event-Driven Processing</span><span class="chip">Kafka Producer / Consumer Flow</span><span class="chip">Kafka Topics</span><span class="chip">Batch Processing</span><span class="chip">Redis Caching</span><span class="chip">Data Mapping</span><span class="chip">Customer Consent</span><span class="chip">OTP-Based 2FA</span><span class="chip">Sprint Planning</span><span class="chip">Task Assignment</span><span class="chip">Prioritization</span><span class="chip">Product Collaboration</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education">
+                <div class="section-head"><div><div class="section-kicker">06 · Education</div><h2 class="section-title">Academic Background</h2></div><span class="section-no">06</span></div>
+                <div class="card"><h3 style="margin:0 0 3px;font-size:15px">Bachelor of Engineering — Electronics and Telecommunication Engineering</h3><p style="margin:0;color:#647688;font-size:11px">Pimpri Chinchwad College of Engineering, Pune · 2015 – 2019</p></div>
+            </section>
+
+            <section id="certifications">
+                <div class="section-head"><div><div class="section-kicker">07 · Certifications</div><h2 class="section-title">Recognition</h2></div><span class="section-no">07</span></div>
+                <div class="card"><h3 style="margin:0 0 3px;font-size:15px">Certificate of Excellence — Turtlemint</h3><p style="margin:0;color:#647688;font-size:11px">January 2025 · Awarded for outstanding contributions to client projects for YES Bank, DBS and Dhofar, demonstrating excellence in delivery, quality and collaboration.</p></div>
+            </section>
+
+            <section id="contact">
+                <div class="section-head"><div><div class="section-kicker">08 · Contact</div><h2 class="section-title">Let's Connect</h2></div><span class="section-no">08</span></div>
+                <div class="card contact">
+                    <div>
+                        <p style="margin:0 0 12px;color:#526576;font-size:12px">Open to discussing backend engineering opportunities, Java/Spring Boot roles and technology projects.</p>
+                        <div class="contact-list"><a class="contact-item" href="mailto:rushikeshkuchekar91@gmail.com">✉ rushikeshkuchekar91@gmail.com</a><a class="contact-item" href="tel:+917218484601">☎ +91 7218484601</a><span class="contact-item">📍 Pune, Maharashtra, India</span></div>
+                    </div>
+                    <a class="btn primary" href="mailto:rushikeshkuchekar91@gmail.com">✈ Contact Me</a>
+                </div>
+            </section>
+        </div>
+
+        <footer><div class="footer-inner"><div><strong>Rushikesh Kuchekar</strong><br>Java Developer | Backend Software Engineer</div><div><a href="https://github.com/rushikesh-kuchekar">GitHub</a> · <a href="https://www.linkedin.com/in/rushikeshkuchekar91/">LinkedIn</a> · <a href="mailto:rushikeshkuchekar91@gmail.com">Email</a></div></div></footer>
+    </main>
+</div>
+<script>
+    const links=[...document.querySelectorAll('nav a')];
+    const sections=[...document.querySelectorAll('main section, #home')];
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+        }
+      });
+    },{rootMargin:'-30% 0px -55% 0px',threshold:0});
+    sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
