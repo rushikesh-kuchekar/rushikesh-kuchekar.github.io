@@ -124,6 +124,7 @@
 
         <!-- ===== HERO ===== -->
         <header id="home" class="hero">
+            <canvas id="particle-canvas"></canvas>
             <div class="hero-inner">
                 <div>
                     <!-- Mobile: small photo + stats inline -->
@@ -138,7 +139,7 @@
 
                     <div class="eyebrow">Hello, I'm</div>
                     <h2>Rushikesh <span>Kuchekar</span></h2>
-                    <h3>Java Developer | Backend Software Engineer</h3>
+                    <h3 id="hero-typewriter"></h3>
                     <p class="lead">Results-driven backend engineer with 4+ years of experience building scalable, secure and high-availability systems for the BFSI sector using Java, Spring Boot, REST APIs, MongoDB and microservices.</p>
 
                     <div class="meta">
@@ -678,6 +679,114 @@
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // ---- Particle background ----
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    class Particle {
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.r = Math.random() * 1.6 + 0.4;
+            this.vx = (Math.random() - 0.5) * 0.35;
+            this.vy = (Math.random() - 0.5) * 0.35;
+            this.alpha = Math.random() * 0.5 + 0.1;
+        }
+        update() {
+            this.x += this.vx; this.y += this.vy;
+            if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(99,186,255,${this.alpha})`;
+            ctx.fill();
+        }
+    }
+    for (let i = 0; i < 70; i++) particles.push(new Particle());
+    function drawLines() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < 90) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(99,186,255,${0.12 * (1 - dist/90)})`;
+                    ctx.lineWidth = 0.7;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawLines();
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // ---- Typewriter effect ----
+    const typewriterEl = document.getElementById('hero-typewriter');
+    const typewriterText = 'Java Developer | Backend Software Engineer';
+    let twIndex = 0;
+    const cursor = document.createElement('span');
+    cursor.className = 'typewriter-cursor';
+    typewriterEl.appendChild(cursor);
+    function type() {
+        if (twIndex < typewriterText.length) {
+            typewriterEl.insertBefore(document.createTextNode(typewriterText[twIndex]), cursor);
+            twIndex++;
+            setTimeout(type, 52 + Math.random() * 30);
+        }
+    }
+    setTimeout(type, 800);
+
+    // ---- Animated number counters ----
+    function animateCounter(el, target, suffix) {
+        const duration = 1600;
+        const start = performance.now();
+        el.classList.add('counting');
+        function step(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * target);
+            el.textContent = current + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+            else { el.textContent = target + suffix; el.classList.remove('counting'); }
+        }
+        requestAnimationFrame(step);
+    }
+    const counters = [
+        { selector: '.stat:nth-child(1) b, .mobile-stat:nth-child(1) b', target: 4, suffix: '+' },
+        { selector: '.stat:nth-child(2) b, .mobile-stat:nth-child(2) b', target: 15, suffix: '+' },
+        { selector: '.stat:nth-child(3) b, .mobile-stat:nth-child(3) b', target: 3, suffix: '+' },
+        { selector: '.metric:nth-child(1) b', target: 4, suffix: '+' },
+        { selector: '.metric:nth-child(2) b', target: 15, suffix: '+' },
+    ];
+    const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                counters.forEach(c => {
+                    document.querySelectorAll(c.selector).forEach(el => animateCounter(el, c.target, c.suffix));
+                });
+                counterObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.4 });
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) counterObserver.observe(heroStats);
 </script>
 </body>
 </html>

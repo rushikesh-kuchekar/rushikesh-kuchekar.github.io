@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    RUSHIKESH KUCHEKAR — PORTFOLIO STYLESHEET
    ============================================================ */
 
@@ -45,13 +45,14 @@ img { display: block; max-width: 100%; }
   position: fixed;
   inset: 0 auto 0 0;
   width: 270px;
-  background: linear-gradient(175deg, #071d30 0%, #09243a 100%);
+  background: linear-gradient(175deg, #050f1c 0%, #071d30 40%, #0a2240 70%, #0d2952 100%);
   color: #fff;
   padding: 28px 16px;
   display: flex;
   flex-direction: column;
   z-index: 20;
   overflow-y: auto;
+  border-right: 1px solid rgba(22,131,246,.12);
 }
 .brand {
   text-align: center;
@@ -288,14 +289,20 @@ section { scroll-margin-top: 28px; margin-bottom: 56px; }
 .project {
   background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px;
   display: flex; flex-direction: column; position: relative; overflow: hidden;
-  transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease), border-color var(--t) var(--ease);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .project::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, #1683f6, #53b2ff); opacity: 0; transition: opacity var(--t) var(--ease);
+  background: linear-gradient(90deg, #1683f6, #53b2ff); opacity: 0; transition: opacity 0.3s var(--ease);
 }
-.project:hover { transform: translateY(-5px); box-shadow: 0 18px 42px rgba(9,31,54,.12); border-color: #bdd9f0; }
+.project::after {
+  content: ''; position: absolute; inset: 0; border-radius: 16px;
+  box-shadow: 0 0 0 0 rgba(22,131,246,0); transition: box-shadow 0.3s var(--ease);
+  pointer-events: none;
+}
+.project:hover { transform: translateY(-7px); box-shadow: 0 24px 52px rgba(22,131,246,.16), 0 8px 20px rgba(9,31,54,.1); border-color: #93c8f5; }
 .project:hover::before { opacity: 1; }
+.project:hover::after { box-shadow: 0 0 0 1px rgba(22,131,246,.2); }
 .project h3 { font-size: 13.5px; font-weight: 700; margin: 0 0 8px; color: var(--ink); }
 .project p { font-size: 12px; color: #586b7c; margin: 0 0 14px; line-height: 1.65; flex: 1; }
 .project .chips { gap: 5px; }
@@ -386,6 +393,29 @@ footer { background: var(--navy); color: #8facbf; padding: 28px clamp(20px,5vw,6
 .footer-links { display: flex; gap: 18px; }
 .footer-links a { color: #6e95b0; font-size: 12px; font-weight: 500; transition: color var(--t); }
 .footer-links a:hover { color: #fff; }
+
+/* ===== PARTICLE CANVAS ===== */
+#particle-canvas {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+
+/* ===== TYPEWRITER CURSOR ===== */
+.typewriter-cursor {
+  display: inline-block; width: 2px; height: 1em;
+  background: #6dbfff; margin-left: 3px; vertical-align: middle;
+  animation: blink-cursor 0.75s step-end infinite;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== COUNTER ANIMATION ===== */
+.stat b, .metric b, .mobile-stat b {
+  transition: color 0.3s;
+}
+.counting { color: #31a1ff !important; }
 
 /* ===== SCROLL-TO-TOP ===== */
 #scroll-top {
