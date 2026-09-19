@@ -137,6 +137,17 @@
                         </div>
                     </div>
 
+                    <div class="hero-status-row">
+                        <span class="status-badge open">
+                            <span class="status-dot"></span>
+                            Open to Backend Engineering Roles
+                        </span>
+                        <span class="status-badge company">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            Currently at Turtlemint
+                        </span>
+                    </div>
+
                     <div class="eyebrow">Hello, I'm</div>
                     <h2>Rushikesh <span>Kuchekar</span></h2>
                     <h3 id="hero-typewriter"></h3>
@@ -357,9 +368,14 @@
                 <div class="card timeline reveal">
 
                     <article class="role">
-                        <h3>Software Engineer</h3>
-                        <div class="company">Turtlemint</div>
-                        <div class="sub">Pune, Maharashtra · May 2023 – Present</div>
+                        <div class="role-header">
+                            <div>
+                                <h3>Software Engineer</h3>
+                                <div class="company">Turtlemint</div>
+                                <div class="sub">Pune, Maharashtra · May 2023 – Present</div>
+                            </div>
+                            <span class="duration-badge">2+ yrs</span>
+                        </div>
                         <ul>
                             <li>Architected and delivered production-grade RESTful APIs using Java and Spring Boot for high-volume BFSI policy sales and renewal workflows across clients including YES Bank, DBS Bank and Bank Dhofar.</li>
                             <li>Optimized MongoDB queries and backend data access, contributing to 15–20% performance improvement and stable database migration.</li>
@@ -373,9 +389,14 @@
                     </article>
 
                     <article class="role">
-                        <h3>Technical Support Engineer / Backend Engineering</h3>
-                        <div class="company">Turtlemint</div>
-                        <div class="sub">Pune, Maharashtra · October 2022 – May 2023</div>
+                        <div class="role-header">
+                            <div>
+                                <h3>Technical Support Engineer / Backend Engineering</h3>
+                                <div class="company">Turtlemint</div>
+                                <div class="sub">Pune, Maharashtra · October 2022 – May 2023</div>
+                            </div>
+                            <span class="duration-badge">7 mos</span>
+                        </div>
                         <ul>
                             <li>Provided technical support, troubleshooting and production issue resolution for BFSI platform workflows.</li>
                             <li>Performed Root Cause Analysis (RCA) to identify underlying issues and prevent repeat incidents.</li>
@@ -399,8 +420,13 @@
                 <div class="project-grid">
 
                     <article class="project reveal reveal-d1">
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Enterprise · Production</span>
+                            <span class="proj-badge current">Current Project</span>
+                        </div>
                         <h3>UBI — Backend Engineering &amp; Integration</h3>
                         <p>Leading backend delivery for Usage Based Insurance, including reference-data mapping, asynchronous lead processing, customer consent and OTP-based two-factor authentication.</p>
+                        <div class="proj-impact">⚡ Kafka batch processing · ~45 leads/batch · 2FA secured</div>
                         <div class="chips">
                             <span class="chip">Java</span><span class="chip">Spring Boot</span>
                             <span class="chip">Kafka</span><span class="chip">Redis</span>
@@ -410,8 +436,13 @@
                     </article>
 
                     <article class="project reveal reveal-d2">
-                        <h3>Union Bank of India — Policy Renewal</h3>
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Enterprise · Production</span>
+                            <span class="proj-badge bank">Union Bank of India</span>
+                        </div>
+                        <h3>Policy Renewal Module</h3>
                         <p>Developed and integrated a policy renewal module for the renewal vertical using Java and RESTful APIs; deployed successfully to production with Jenkins and Tekton CI/CD pipelines.</p>
+                        <div class="proj-impact">📉 50% reduction in renewal processing time</div>
                         <div class="chips">
                             <span class="chip">Java</span><span class="chip">REST APIs</span>
                             <span class="chip">MongoDB</span><span class="chip">Jenkins</span>
@@ -421,8 +452,13 @@
                     </article>
 
                     <article class="project reveal reveal-d3">
-                        <h3>YES Bank — Backend &amp; Security</h3>
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Enterprise · Production</span>
+                            <span class="proj-badge bank">YES Bank</span>
+                        </div>
+                        <h3>Backend &amp; Security Hardening</h3>
                         <p>Optimized MongoDB and backend queries, strengthened authentication/session controls, replaced weak Base64 encoding with AES encryption, and integrated HashiCorp Vault for secrets management.</p>
+                        <div class="proj-impact">🔒 AES encryption · Vault secrets · 15–20% perf gain</div>
                         <div class="chips">
                             <span class="chip">Java</span><span class="chip">MongoDB</span>
                             <span class="chip">AES</span><span class="chip">Vault</span>
@@ -432,8 +468,13 @@
                     </article>
 
                     <article class="project reveal reveal-d4">
-                        <h3>DBS Bank — MongoDB Upgrade</h3>
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Enterprise · Production</span>
+                            <span class="proj-badge bank">DBS Bank</span>
+                        </div>
+                        <h3>MongoDB Version Upgrade</h3>
                         <p>Led the MongoDB version upgrade effort, updated Java backend components and drivers, consolidated data access layers and removed redundant cache resources to reduce complexity.</p>
+                        <div class="proj-impact">🚀 Zero-downtime migration · reduced cache overhead</div>
                         <div class="chips">
                             <span class="chip">Java</span><span class="chip">Node.js</span>
                             <span class="chip">MongoDB</span><span class="chip">Jenkins</span>
@@ -442,8 +483,13 @@
                     </article>
 
                     <article class="project reveal reveal-d5">
-                        <h3>Bank Dhofar — Sales &amp; Renewal Analytics</h3>
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Enterprise · Production</span>
+                            <span class="proj-badge bank">Bank Dhofar</span>
+                        </div>
+                        <h3>Sales &amp; Renewal Analytics</h3>
                         <p>Engineered a module for tracking policy sales and renewals using Java and Metabase, improving real-time KPI visibility and eliminating 3–4 hours of manual weekly reporting.</p>
+                        <div class="proj-impact">📊 3–4 hrs/week saved · real-time KPI visibility</div>
                         <div class="chips">
                             <span class="chip">Java</span><span class="chip">Metabase</span>
                             <span class="chip">REST APIs</span><span class="chip">AngularJS</span>
@@ -452,8 +498,13 @@
                     </article>
 
                     <article class="project reveal reveal-d6">
+                        <div class="project-badge-row">
+                            <span class="proj-badge enterprise">Cross-Client</span>
+                            <span class="proj-badge security">Security</span>
+                        </div>
                         <h3>Secure Backend Architecture</h3>
                         <p>Implemented AES encryption, secure HTTP headers and HashiCorp Vault secret management for stronger application security across multiple client BFSI environments.</p>
+                        <div class="proj-impact">🛡️ AES · OAuth2 · Vault · Secure headers</div>
                         <div class="chips">
                             <span class="chip">AES</span><span class="chip">Vault</span>
                             <span class="chip">Spring Security</span><span class="chip">OAuth2</span>
